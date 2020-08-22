@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="frame">
+    <div class="title">
+      הרשמה
+    </div>
+    <form
+      [formGroup]="signUpForm"
+      (ngSubmit)="onSubmit(signUpForm.value)"
+      class="form"
+    >
+      <mat-form-field
+        [ngClass]="{ correct: signUpForm.controls['שם מלא'].valid }"
+        class="form-element"
+      >
+        <input
+          type="text"
+          matInput
+          placeholder="שם מלא"
+          formControlName="שם מלא"
+        />
+        <mat-error *ngIf="hasError('שם מלא', 'required')"
+          >שם מלא הוא שדה חובה</mat-error
+        >
+        <mat-error *ngIf="hasError('אימייל', 'minLength(2)')"></mat-error>
+        <mat-hint>הכנס שם המכיל לפחות 2 תווים</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field
+        class="form-element"
+        [ngClass]="{ correct: signUpForm.controls['אימייל'].valid }"
+      >
+        <input
+          type="text"
+          matInput
+          placeholder="אימייל"
+          formControlName="אימייל"
+        />
+        <mat-error *ngIf="hasError('אימייל', 'required')"
+          >אימייל הוא שדה חובה</mat-error
+        >
+        <mat-error *ngIf="hasError('אימייל', 'email')"
+          >אנא הכנס כתובת אימייל תקינה</mat-error
+        >
+        <mat-hint>email@adress.com</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field
+        class="form-element"
+        [ngClass]="{ correct: signUpForm.controls['סיסמא'].valid }"
+      >
+        <input
+          type="password"
+          matInput
+          placeholder="סיסמא"
+          formControlName="סיסמא"
+        />
+
+        <mat-error *ngIf="hasError('סיסמא', 'required')"
+          >סיסמא הוא שדה חובה</mat-error
+        >
+        <mat-error *ngIf="hasError('סיסמא', 'minLength(8)')"></mat-error>
+        <mat-hint>הכנס סיסמא המכילה לפחות 8 תווים</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field
+        class="form-element"
+        [ngClass]="{ correct: signUpForm.controls['אישור סיסמא'].valid }"
+      >
+        <input
+          type="password"
+          matInput
+          placeholder="אישור סיסמא"
+          formControlName="אישור סיסמא"
+        />
+
+        <mat-error *ngIf="hasError('אישור סיסמא', 'required')"
+          >אישור סיסמא הוא שדה חובה</mat-error
+        >
+        <mat-error *ngIf="hasError('אישור סיסמא', 'minLength(8)')"></mat-error>
+
+        <mat-error>Password does not match</mat-error>
+
+        <mat-hint>אנא חזור על סיסמתך</mat-hint>
+      </mat-form-field>
+
+      <div class="form-element">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="button"
+          [disabled]="!signUpForm.valid"
+        >
+          הרשם
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

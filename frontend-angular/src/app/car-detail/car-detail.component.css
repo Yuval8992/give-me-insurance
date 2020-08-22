@@ -1,0 +1,43 @@
+form {
+  margin-top: 5rem;
+}
+.fields-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8rem;
+}
+.mat-form-field {
+  font-size: 1.5rem;
+}
+
+.mat-radio-group {
+  font-size: 1.5rem;
+}
+
+.label-radio {
+  display: block;
+  margin-top: 0rem;
+}
+
+.arrow-left {
+  height: 4rem;
+  margin-right: 3rem;
+  top: 50%;
+}
+
+.btn-blue {
+  background-color: rgb(52, 123, 245);
+  color: #fff;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  margin-top: 4.5rem;
+  margin-left: 5rem;
+}

@@ -1,0 +1,71 @@
+.container {
+  width: 70%;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.title {
+  color: rgb(66, 134, 244);
+  font-size: 2.5rem;
+  padding-bottom: 1px;
+  border-bottom: 1px solid;
+  margin-right: 4rem;
+  width: 11rem;
+}
+
+.mat-form-field {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}
+
+.mat-radio-group {
+  font-size: 1.5rem;
+}
+
+.label-radio {
+  display: block;
+  margin-top: 0rem;
+}
+
+.btn {
+  margin-top: 2rem;
+}
+
+.btn-true {
+  margin-left: 12rem;
+}
+
+.classification {
+  width: 20rem;
+  margin-top: 1rem;
+  margin-right: 4rem;
+  display: inline-block;
+}
+
+.search-car {
+  display: inline-block;
+  margin-right: 15rem;
+  height: 8rem;
+}
+
+.search-icon {
+  display: inline-block;
+  height: 4rem;
+  margin-top: 2rem;
+}
+
+.search-text {
+  margin-bottom: 1px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.search-btn {
+  width: 12rem;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.search-btn:hover {
+  background-color: rgb(66, 134, 244);
+}

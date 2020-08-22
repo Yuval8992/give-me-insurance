@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon
+      style="cursor: pointer; outline: none;"
+      routerLink="/car-search"
+      aria-hidden="false"
+      aria-label="home icon"
+      >home</mat-icon
+    >
+    <span><a mat-button routerLink="/car-search">דף הבית</a></span>
+
+    <span class="spacer"></span>
+    <a
+      *ngIf="!loggedIn"
+      routerLinkActive="active"
+      mat-button
+      routerLink="/sign-in"
+      >התחבר</a
+    >
+    <a
+      *ngIf="!loggedIn"
+      routerLinkActive="active"
+      mat-button
+      routerLink="/sign-up"
+      >הרשם</a
+    >
+    <a
+      *ngIf="loggedIn"
+      routerLinkActive="active"
+      mat-button
+      href="#"
+      (click)="logout($event)"
+      >התנתק</a
+    >
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,12 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  font-size: 1.8rem;
+}
+.active {
+  background-color: white;
+  color: rgb(52, 123, 245);
+  transition: 2s;
+}

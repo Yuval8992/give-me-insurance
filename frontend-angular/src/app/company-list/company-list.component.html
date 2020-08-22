@@ -1,0 +1,26 @@
+<div *ngIf="dataReady" class="container">
+  <div class="header">
+    <div class="result-sum">
+      <p>סה"כ תוצאות - {{ companies.length }}</p>
+    </div>
+    <div class="back-to-datails">
+      <a routerLink="./..">חזרה למסך בבקשה</a>
+    </div>
+  </div>
+  <div class="titles">
+    <p>חברה</p>
+    <p>מסלול</p>
+    <p>מקיף</p>
+    <p>חובה</p>
+    <p>סה"כ</p>
+  </div>
+  <div class="results">
+    <div class="result" *ngFor="let company of companies">
+      <img [src]="company.imageUrl" alt="company-logo" />
+      <p>{{ company.planName }}</p>
+      <p style="padding-right: 7rem;">{{ company.comprehensiveInsurance }}</p>
+      <p style="text-align: center;">{{ company.compulsoryInsurance }}</p>
+      <p style="text-align: left;">{{ company.total }}</p>
+    </div>
+  </div>
+</div>

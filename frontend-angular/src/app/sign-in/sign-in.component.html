@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="frame">
+    <div class="title">
+      התחברות
+    </div>
+    <form
+      [formGroup]="signInForm"
+      (ngSubmit)="onSubmit(signInForm.value)"
+      class="form"
+    >
+      <mat-form-field
+        class="form-element"
+        [ngClass]="{ correct: signInForm.controls['אימייל'].valid }"
+      >
+        <input
+          type="text"
+          matInput
+          placeholder="אימייל"
+          formControlName="אימייל"
+        />
+        <mat-error *ngIf="hasError('אימייל', 'required')"
+          >אימייל הוא שדה חובה</mat-error
+        >
+        <mat-error *ngIf="hasError('אימייל', 'email')"
+          >אנא הכנס כתובת אימייל תקינה</mat-error
+        >
+        <mat-hint>email@adress.com</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field
+        class="form-element"
+        [ngClass]="{ correct: signInForm.controls['סיסמא'].valid }"
+      >
+        <input
+          type="password"
+          matInput
+          placeholder="סיסמא"
+          formControlName="סיסמא"
+        />
+
+        <mat-error *ngIf="hasError('סיסמא', 'required')"
+          >סיסמא הוא שדה חובה</mat-error
+        >
+        <mat-error *ngIf="hasError('סיסמא', 'minLength(8)')"></mat-error>
+        <mat-hint>הכנס סיסמא המכילה לפחות 8 תווים</mat-hint>
+      </mat-form-field>
+
+      <div class="form-element">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="button"
+          [disabled]="!signInForm.valid"
+        >
+          התחבר
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

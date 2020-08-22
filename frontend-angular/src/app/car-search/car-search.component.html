@@ -1,0 +1,27 @@
+<div class="container">
+  <form [formGroup]="carSearchForm" (ngSubmit)="onSubmitCarNumber()">
+    <div class="title">פרטי הרכב</div>
+    <div class="classification">
+      <mat-radio-group
+        formControlName="מס רכב"
+        labelPosition="before"
+        aria-label="בחר רכב לפי"
+      >
+        <label class="label-radio"> בחר רכב לפי:</label>
+        <mat-radio-button class="btn" value="כן">מס' רכב</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="search-car">
+      <mat-form-field>
+        <input matInput placeholder="הזן מספר רכב" formControlName="מספר רכב" />
+      </mat-form-field>
+      <button type="submit" class="search-btn">
+        <img
+          class="search-icon"
+          src="https://img.icons8.com/doodle/48/000000/search--v1.png"
+        />
+        <div class="search-text">איתור רכב</div>
+      </button>
+    </div>
+  </form>
+</div>

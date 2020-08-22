@@ -1,0 +1,98 @@
+<div *ngIf="dataReady">
+  <form [formGroup]="carForm">
+    <div class="fields-container">
+      <mat-form-field>
+        <input matInput placeholder="מספר דגם" formControlName="מספר דגם" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          #year
+          matInput
+          placeholder="שנת ייצור"
+          formControlName="שנת ייצור"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="תיאור הדגם" formControlName="תיאור הדגם" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="תאריך עלייה לכביש"
+          formControlName="תאריך עלייה לכביש"
+        />
+      </mat-form-field>
+
+      <mat-radio-group
+        labelPosition="before"
+        aria-label="גיר"
+        formControlName="גיר"
+      >
+        <label class="label-radio">גיר</label>
+        <mat-radio-button class="btn btn-true" value="1"
+          >אוטומטי</mat-radio-button
+        >
+        <mat-radio-button class="btn btn-false" value="0"
+          >ידני</mat-radio-button
+        >
+      </mat-radio-group>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="כריות אוויר"
+          formControlName="כריות אוויר"
+        />
+      </mat-form-field>
+
+      <mat-radio-group
+        labelPosition="before"
+        aria-label="(ESP) מערכת בקרת יציבות"
+        formControlName="(ESP) מערכת בקרת יציבות"
+      >
+        <label class="label-radio"
+          >מערכת בקרת יציבות <span dir="ltr">&nbsp;(ESP)</span></label
+        >
+        <mat-radio-button class="btn btn-true" value="1">כן</mat-radio-button>
+        <mat-radio-button class="btn btn-false" value="0">לא</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-radio-group
+        labelPosition="before"
+        aria-label="התראה על סטייה מנתיב ,LDW מערכת"
+        formControlName="התראה על סטייה מנתיב ,LDW מערכת"
+      >
+        <label class="label-radio"
+          >מערכת <span dir="ltr">&nbsp;,LDW</span>התראה על סטייה מנתיב</label
+        >
+        <mat-radio-button color="accent" class="btn btn-true" value="1"
+          >כן</mat-radio-button
+        >
+        <mat-radio-button class="btn btn-false" value="0">לא</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-radio-group
+        labelPosition="before"
+        aria-label="התראת אי שמירת מרחק ,FCW מערכת"
+        formControlName="התראת אי שמירת מרחק ,FCW מערכת"
+      >
+        <label class="label-radio"
+          >מערכת <span dir="ltr">&nbsp;,FCW</span>התראת אי שמירת מרחק</label
+        >
+        <mat-radio-button class="btn btn-true" value="1">כן</mat-radio-button>
+        <mat-radio-button class="btn btn-false" value="0">לא</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+  <div class="btn-container">
+    <a
+      [routerLink]="['/cars', carID, 'companies']"
+      [queryParams]="{ year: year.value }"
+      class="btn btn-blue"
+      >קבלת הצעות</a
+    >
+  </div>
+</div>
